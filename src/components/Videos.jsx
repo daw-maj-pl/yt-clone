@@ -1,4 +1,5 @@
 import { Stack, Box } from '@mui/material';
+import VideoCard from './VideoCard';
 
 const Videos = ({ videos }) => {
   if (!videos?.length) return '<Loader />;';
@@ -13,7 +14,7 @@ const Videos = ({ videos }) => {
     >
       {videos.map((item, idx) => (
         <Box key={idx}>
-          {item.id.videoId && '<VideoCard />'}
+          {item.id.videoId && <VideoCard video={item} />}
           {item.id.channelId && '<ChannelCard />'}
         </Box>
       ))}
