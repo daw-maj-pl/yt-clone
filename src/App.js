@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Feed from './components/Feed';
 import ChannelDetail from './components/ChannelDetail';
 import SearchFeed from './components/SearchFeed';
+import VideoDetail from './components/VideoDetail';
 
 const App = () => {
   return (
@@ -12,7 +13,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Feed />} />
-          <Route path="/video/:id" element={<h1>VideoDetail</h1>} />
+          <Route path="/video/:id" element={<VideoDetail />} />
           <Route path="/channel/:id" element={<ChannelDetail />} />
           <Route path="/search/:searchTerm" element={<SearchFeed />} />
         </Routes>
