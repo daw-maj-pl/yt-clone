@@ -77,7 +77,7 @@ const VideoDetail = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Videos videos={videos} />
+          <Videos videos={videos} direction="column" />
         </Box>
       </Stack>
     </Box>
