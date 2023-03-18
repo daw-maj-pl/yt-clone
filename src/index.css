@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  min-height: 100vh;
   box-sizing: border-box;
+  background-color: #000;
 }
 
 a {
@@ -34,7 +40,7 @@ a {
 }
 
 .react-player {
-  height: 77vh !important;
+  height: 75vh !important;
   width: 100% !important;
 }
 

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import ReactPlayer from 'react-player';
 import { Typography, Box, Stack } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Videos from './Videos';
 import Loader from './Loader';
 import { fetchFromAPI } from '../utils/fetchFromAPI';
@@ -11,6 +12,7 @@ const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
   const { id } = useParams();
+  const matches = useMediaQuery('(min-width:1200px)');
 
   useEffect(() => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`).then(data =>
@@ -30,8 +32,8 @@ const VideoDetail = () => {
   } = videoDetail;
 
   return (
-    <Box minHeight="95vh">
-      <Stack direction={{ xs: 'column', md: 'row' }}>
+    <Box>
+      <Stack direction={{ xs: 'column', lg: 'row' }}>
         <Box flex={1}>
           <Box sx={{ width: '100%', position: 'sticky', top: '86px' }}>
             <ReactPlayer
@@ -73,12 +75,12 @@ const VideoDetail = () => {
         </Box>
         <Box
           px={2}
-          py={{ xs: 5, md: 1 }}
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
+          py={{ xs: 5, lg: 1 }}
+          sx={{
+            minWidth: '320px'
+          }}
         >
-          <Videos videos={videos} direction="column" />
+          <Videos videos={videos} direction={matches && 'column'} />
         </Box>
       </Stack>
     </Box>

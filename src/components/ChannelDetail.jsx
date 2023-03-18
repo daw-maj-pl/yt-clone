@@ -28,9 +28,9 @@ const ChannelDetail = () => {
   }, [id]);
 
   return (
-    <Box minHeight="95vh">
+    <Box>
       {channelDetail && (
-        <Box>
+        <Box sx={{ marginBottom: '60px' }}>
           <div
             style={{
               height: '300px',
@@ -42,8 +42,7 @@ const ChannelDetail = () => {
         </Box>
       )}
 
-      <Box p={2} display="flex">
-        <Box sx={{ mr: { sm: '100px' } }} />
+      <Box mx={8}>
         <Videos videos={videos} />
       </Box>
     </Box>
